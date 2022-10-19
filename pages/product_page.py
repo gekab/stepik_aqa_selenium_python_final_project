@@ -25,3 +25,12 @@ class ProductPage(BasePage):
         exp_result = self.browser.find_element(*PromoNewYearPageLocator.PRICE_TEXT).get_attribute('innerHTML')
         assert exp_result[:5] == act_result[:5], f"Price {exp_result[:5]} is not equal to price {act_result}"
 
+    def add_to_basket(self):
+        self.should_be_add_to_basket_link()
+        add_to_basket_button = self.browser.find_element(*PromoNewYearPageLocator.ADD_BUTTON)
+        add_to_basket_button.click()
+
+    def should_be_add_to_basket_link(self):
+        assert self.is_element_present(*PromoNewYearPageLocator.ADD_BUTTON), \
+            "Add to Basket button is not presented"
+

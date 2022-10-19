@@ -13,10 +13,6 @@ class BasePageLocators():
     SEARCH_BUTTON = (By.CSS_SELECTOR, "input[type='submit']")
 
 
-class CodersAtWorkLocators():
-    ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, ".btn-add-to-basket")
-
-
 class MainPageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
 

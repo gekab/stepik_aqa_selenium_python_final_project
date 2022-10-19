@@ -27,33 +27,10 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     basket_page = BasketPage(browser, link)
     basket_page.open()
     basket_page.go_to_basket_page()
-    time.sleep(5)
-
-    # тест когда товар добавлен в корзину
-    # basket_page.search_send_keys()
-    # basket_page.click_search_button()
-    # browser.find_element(By.XPATH, '//button[text()="Add to basket"]').click()
-    # browser.find_element(By.XPATH, '//a[text()="View basket"]').click()
-    #
-
+    # time.sleep(5)
     basket_page.should_not_be_products()
     basket_page.should_be_empty_basket_message()
-    time.sleep(5)
-
-@pytest.mark.product_page
-def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
-    # Гость открывает страницу товара
-    # Переходит в корзину по кнопке в шапке
-    # Ожидаем, что в корзине нет товаров
-    # Ожидаем, что есть текст о том что корзина пуста
-    link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/coders-at-work_207/"
-    product_page = ProductPage(browser, link)
-    product_page.open()
-    product_page.go_to_basket_page()
-    basket_page = BasketPage(browser, browser.current_url)
-    basket_page.should_not_be_products()
-    basket_page.should_be_empty_basket_message()
-    time.sleep(2)
+    # time.sleep(5)
 
 
 @pytest.mark.login_guest
