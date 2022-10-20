@@ -47,21 +47,22 @@ class TestUserAddToBasketFromProductPage:
         page.should_not_be_success_message()
 
 
+
+# @pytest.mark.parametrize('links', [
+#     "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0",
+#     "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer1",
+#     "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer2",
+#     "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer3",
+#     "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer4",
+#     "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer5",
+#     "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer6",
+#     pytest.param("http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer7",
+#                  marks=pytest.mark.skip),
+#     "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer8",
+#     "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer9"])
+# @pytest.mark.xfail(reason="fixing this bug right now")
 @pytest.mark.need_review
-@pytest.mark.parametrize('links', [
-    "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0",
-    "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer1",
-    "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer2",
-    "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer3",
-    "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer4",
-    "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer5",
-    "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer6",
-    pytest.param("http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer7",
-                 marks=pytest.mark.skip),
-    "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer8",
-    "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer9"])
-@pytest.mark.xfail(reason="fixing this bug right now")
-def test_guest_can_add_product_to_basket(browser, links):
+def test_guest_can_add_product_to_basket(browser, links="http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear"):
     link = links
     page = ProductPage(browser, link)
     page.open()
